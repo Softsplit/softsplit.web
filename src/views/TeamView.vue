@@ -8,10 +8,6 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 const isMobile = ref(false)
 const showMobileMenu = ref(false)
-const showHomeIntro = ref(true)
-const showHomeGames = ref(true)
-const showHomeAboutUs = ref(true)
-const showNavigationFooter = ref(true)
 
 const toggleMobileMenu = () => {
   showMobileMenu.value = !showMobileMenu.value
