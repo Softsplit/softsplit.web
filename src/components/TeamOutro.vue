@@ -31,6 +31,7 @@
   font-size: 20px;
   margin-bottom: 20px;
   color: white;
+  text-align: center;
 }
 
 .button {
@@ -58,7 +59,7 @@
     height: 65%;
     width: 65%;
     font-size: 100%;
-    margin-bottom: -17.5%;
+    margin-bottom: -15vw;
   }
 }
 </style>
