@@ -36,14 +36,14 @@
 
 .button {
   background-color: transparent;
-  width: 110px;
+  width: 140px;
   font-weight: 600;
   color: white;
   padding: 8px;
   text-align: center;
   text-decoration: none;
-  font-size: 14px;
-  border-radius: 20px;
+  font-size: 18px;
+  border-radius: 24px;
   border: solid 2px;
   border-color: white;
   transition: 0.25s;
