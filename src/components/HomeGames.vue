@@ -98,7 +98,7 @@
   }
 
   .games-container {
-    width: 80%;
+    width: 90%;
   }
 }
 </style>
