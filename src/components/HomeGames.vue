@@ -94,7 +94,7 @@
 @media (max-width: 768px) {
   .games-header {
     text-align: center;
-    font-size: 220%;
+    width: 90%;
   }
 
   .games-container {
