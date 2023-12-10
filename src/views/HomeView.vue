@@ -11,9 +11,10 @@
 
     <meta name="twitter:image:src" content="https://softsplit.org/assets/logo2-SHwmP7UB.png" />
     <meta name="twitter:site" content="@Softsplit" />
-    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Softsplit Studios" />
     <meta name="twitter:description" content="We make stuff in our spare time" />
+
+    <meta content="#FFA500" data-react-helmet="true" name="theme-color" />
   </Head>
   <NavigationBar
     :isMobile="isMobile"
