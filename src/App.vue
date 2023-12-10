@@ -3,6 +3,7 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
+  <title>Softsplit Studios</title>
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://softsplit.org" />
   <meta property="og:title" content="Softsplit Studios" />
