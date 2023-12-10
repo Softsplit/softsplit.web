@@ -22,6 +22,31 @@ import HomeIntro from '@/components/HomeIntro.vue'
 import HomeGames from '@/components/HomeGames.vue'
 import HomeAboutUs from '@/components/HomeAboutUs.vue'
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { useHead } from '@unhead/vue'
+
+const pageTitle = 'Softsplit Studios';
+const siteUrl = 'https://softsplit.org';
+const siteDescription = 'We make stuff in our spare time';
+const imageUrl = 'https://softsplit.org/assets/logo2-SHwmP7UB.png';
+
+useHead({
+  title: pageTitle,
+  meta: [
+    { property: 'og:image', content: imageUrl },
+    { property: 'og:image:alt', content: 'We make stuff in our spare time' },
+    { property: 'og:image:width', content: '512' },
+    { property: 'og:image:height', content: '512' },
+    { property: 'og:site_name', content: 'Softsplit Studios' },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: siteUrl },
+    { property: 'og:description', content: siteDescription },
+    { name: 'twitter:image:src', content: imageUrl },
+    { name: 'twitter:site', content: '@Softsplit' },
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:title', content: 'Softsplit Studios' },
+    { name: 'twitter:description', content: siteDescription },
+  ],
+});
 
 const isMobile = ref(false)
 const showMobileMenu = ref(false)
