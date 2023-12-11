@@ -11,6 +11,16 @@
         <div class="member-name">badandbest</div>
         <div class="member-title">Programmer</div>
       </div>
+      <div class="member-container">
+        <img alt="Member picture" src="@/assets/bozlabs.jpg" class="member-img" />
+        <div class="member-name">Boz</div>
+        <div class="member-title">Level Designer</div>
+      </div>
+      <div class="member-container">
+        <img alt="Member picture" src="@/assets/amystudios.png" class="member-img" />
+        <div class="member-name">AmyStudios</div>
+        <div class="member-title">Texture Artist</div>
+      </div>
     </div>
   </div>
 </template>
@@ -28,7 +38,7 @@
 .teamlist-wrapper {
   display: flex;
   flex-direction: row;
-  gap: 5vw;
+  gap: 2.5vw;
   height: fit-content;
   margin: auto;
 }
