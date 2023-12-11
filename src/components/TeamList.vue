@@ -4,7 +4,7 @@
       <div class="member-container">
         <img alt="Member picture" src="@/assets/asphaltian.jpg" class="member-img" />
         <div class="member-name">Asphaltian</div>
-        <div class="member-title">Founder</div>
+        <div class="member-title">Founder/Programmer</div>
       </div>
       <div class="member-container">
         <img alt="Member picture" src="@/assets/badandbest.jpg" class="member-img" />
