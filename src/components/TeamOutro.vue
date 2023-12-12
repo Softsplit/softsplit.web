@@ -8,6 +8,11 @@
 </template>
 
 <style scoped>
+@font-face {
+  font-family: 'Gadugi Bold';
+  src: url('@/assets/fonts/gadugib.ttf');
+}
+
 .outro {
   display: flex;
   flex-direction: column;
@@ -27,7 +32,7 @@
   height: fit-content;
   margin-right: auto;
   margin-left: auto;
-  font-family: 'Noto Sans';
+  font-family: 'Gadugi Bold';
   font-size: 20px;
   margin-bottom: 20px;
   color: white;
