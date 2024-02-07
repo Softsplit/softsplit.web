@@ -23,7 +23,7 @@
   background-size: cover;
   background-position: right;
   /*background-image: url(@/assets/games.png);*/
-  background-color: orange;
+  background: var(--color-background);
   box-shadow: 0 0 200px rgba(0, 0, 0, 0.9) inset;
 }
 
