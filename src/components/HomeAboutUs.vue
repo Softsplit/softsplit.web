@@ -3,8 +3,7 @@
     <img alt="About us" src="@/assets/aboutus.png" class="aboutus-img" />
     <div class="aboutus-header">About Us</div>
     <p class="aboutus-description">
-      We operate as an autonomous game development studio. Presently, we are in the process of
-      reconstructing The Stanley Parable within the Source 2 engine for S&box.
+      We operate as an autonomous game development studio, presently developing for S&box.
     </p>
     <p class="aboutus-description">
       Our primary focus is on prioritizing the player's experience, drawing insights from their

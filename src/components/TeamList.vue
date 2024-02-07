@@ -41,8 +41,9 @@
 }
 
 .teamlist-wrapper {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  flex-wrap: wrap;
   gap: 2.5vw;
   height: fit-content;
   margin: auto;
@@ -82,6 +83,7 @@
 
 @media (max-width: 768px) {
   .teamlist-wrapper {
+    display: flex;
     flex-direction: column;
   }
 

@@ -3,14 +3,12 @@
     <div class="games-header">Our projects currently available on S&box</div>
     <div class="games-wrapper">
       <div class="games-container">
-        <a href="https://tspsource2.softsplit.org" class="games-coverart"></a>
-        <a href="https://tspsource2.softsplit.org" class="games-title"
-          >The Stanley Parable: Source 2</a
-        >
+        <a href="https://asset.party/softsplit/donut" class="games-coverart"></a>
+        <a href="https://asset.party/softsplit/donut" class="games-title">S&box Donut</a>
         <p class="games-description">
-          Embark on a surreal odyssey through a reenvisioned corporate realm, navigating perplexing
-          decisions and delving into mind-twisting narratives, all propelled by the dynamic
-          capabilities of the Source 2 engine.
+          Immerse yourself in the tantalizing thrill of staring at a spinning ASCII torus, as you
+          ponder life's deepest questions, such as 'Why is this so oddly satisfying?' and 'Can I
+          make a career out of staring at virtual donuts?'
         </p>
       </div>
     </div>
@@ -24,7 +22,8 @@
   height: fit-content;
   background-size: cover;
   background-position: right;
-  background-image: url(@/assets/games.png);
+  /*background-image: url(@/assets/games.png);*/
+  background-color: orange;
   box-shadow: 0 0 200px rgba(0, 0, 0, 0.9) inset;
 }
 
@@ -59,7 +58,7 @@
 
 .games-coverart {
   height: 650px;
-  background-image: url(@/assets/tspsource2_coverart.png);
+  background-image: url(@/assets/donut_coverart.png);
   background-position: center;
   background-size: cover;
   border-radius: 20px;

@@ -14,8 +14,8 @@
       </div>
       <div class="navfooter-container">
         <div class="navfooter-header">Games</div>
-        <a href="https://tspsource2.softsplit.org" class="navfooter-item"
-          >The Stanley Parable: Source 2</a
+        <a href="https://asset.party/softsplit/donut" class="navfooter-item"
+          >S&box Donut</a
         >
       </div>
       <div class="navfooter-container">
