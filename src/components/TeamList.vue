@@ -7,7 +7,7 @@
         <div class="member-title">Founder/Programmer</div>
       </div>
       <div class="member-container">
-        <img alt="Member picture" src="@/assets/badandbest.jpg" class="member-img" />
+        <img alt="Member picture" src="@/assets/badandbest.webp" class="member-img" />
         <div class="member-name">badandbest</div>
         <div class="member-title">Programmer</div>
       </div>
