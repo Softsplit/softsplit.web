@@ -22,8 +22,7 @@
   height: fit-content;
   background-size: cover;
   background-position: right;
-  /*background-image: url(@/assets/games.png);*/
-  background: var(--color-background);
+  background-image: url(@/assets/games.png);
   box-shadow: 0 0 200px rgba(0, 0, 0, 0.9) inset;
 }
 
