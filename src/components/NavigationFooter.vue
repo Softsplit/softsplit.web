@@ -24,7 +24,7 @@
           <a href="https://youtube.com/@SoftsplitStudios">
             <img alt="Softsplit logo" src="@/assets/youtube.png" class="navfooter-socials" />
           </a>
-          <a href="https://discord.gg/GaGFHFttAC">
+          <a href="https://discord.gg/rbCJdZjewf">
             <img alt="Softsplit logo" src="@/assets/discord.png" class="navfooter-socials" />
           </a>
           <a href="https://twitter.com/Softsplit">
