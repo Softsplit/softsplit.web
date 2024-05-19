@@ -6,26 +6,6 @@
         <div class="member-name">Asphaltian</div>
         <div class="member-title">Founder, Programmer</div>
       </div>
-      <div class="member-container">
-        <img alt="Member picture" src="@/assets/bubbl.webp" class="member-img" />
-        <div class="member-name">bub.bl</div>
-        <div class="member-title">Programmer</div>
-      </div>
-      <div class="member-container">
-        <img alt="Member picture" src="@/assets/bozlabs.jpg" class="member-img" />
-        <div class="member-name">Boz</div>
-        <div class="member-title">Level Designer</div>
-      </div>
-      <div class="member-container">
-        <img alt="Member picture" src="@/assets/mrblackmesa1.jpg" class="member-img" />
-        <div class="member-name">MrBlackMesa1</div>
-        <div class="member-title">Level Designer</div>
-      </div>
-      <div class="member-container">
-        <img alt="Member picture" src="@/assets/amystudios.png" class="member-img" />
-        <div class="member-name">AmyStudios</div>
-        <div class="member-title">3D Artist</div>
-      </div>
     </div>
   </div>
 </template>
