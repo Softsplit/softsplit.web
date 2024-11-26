@@ -1,17 +1,7 @@
-import './assets/main.css'
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app/app.module';
 
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
-import { createHead } from '@unhead/vue'
-
-import App from './App.vue'
-import router from './router'
-
-const app = createApp(App)
-const head = createHead()
-
-app.use(head)
-app.use(createPinia())
-app.use(router)
-
-app.mount('#app')
+platformBrowserDynamic().bootstrapModule(AppModule, {
+  ngZoneEventCoalescing: true,
+})
+  .catch(err => console.error(err));
