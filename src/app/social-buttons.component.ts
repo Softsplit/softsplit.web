@@ -11,7 +11,6 @@ import { SocialLink } from './models/social-link.model';
           [href]="social.url"
           target="_blank"
           rel="noopener noreferrer"
-          [attr.aria-label]="social.ariaLabel"
           class="rounded-lg transition-transform hover:scale-110">
           <div class="p-2 rounded-lg">
             <img 
@@ -49,38 +48,32 @@ export class SocialButtonsComponent {
     {
       name: 'Discord',
       icon: 'socials/discord.svg',
-      url: 'https://discord.gg/rbCJdZjewf',
-      ariaLabel: 'Join our Discord server'
+      url: 'https://discord.gg/rbCJdZjewf'
     },
     {
       name: 'YouTube',
       icon: 'socials/youtube.svg',
-      url: 'https://youtube.com/@sftsplt',
-      ariaLabel: 'Visit our YouTube channel'
+      url: 'https://youtube.com/@sftsplt'
     },
     {
       name: 'Twitter',
       icon: 'socials/twitter.svg',
-      url: 'https://x.com/Softsplit',
-      ariaLabel: 'Follow us on Twitter'
+      url: 'https://x.com/Softsplit'
     },
     {
       name: 'Bluesky',
       icon: 'socials/bluesky.svg',
-      url: 'https://bsky.app/profile/softsplit.org',
-      ariaLabel: 'Follow us on Bluesky'
+      url: 'https://bsky.app/profile/softsplit.org'
     },
     {
       name: 'GitHub',
       icon: 'socials/github.svg',
-      url: 'https://github.com/Softsplit',
-      ariaLabel: 'View our GitHub profile'
+      url: 'https://github.com/Softsplit'
     },
     {
       name: 'S&box',
       icon: 'socials/sbox.svg',
-      url: 'https://sbox.game/softsplit',
-      ariaLabel: 'Visit our S&box profile'
+      url: 'https://sbox.game/softsplit'
     }
   ];
 }
