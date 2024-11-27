@@ -8,7 +8,7 @@ import {Component} from '@angular/core';
   styles: `
     div {
       background: black;
-      height: 5000px;
+      height: 1000px;
     }
   `
 })
