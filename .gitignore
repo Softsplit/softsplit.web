@@ -5,7 +5,6 @@
 /tmp
 /out-tsc
 /bazel-out
-/obj
 
 # Node
 /node_modules
@@ -28,9 +27,6 @@ yarn-error.log
 !.vscode/launch.json
 !.vscode/extensions.json
 .history/*
-
-# Visual Studio
-.vs/*
 
 # Miscellaneous
 /.angular/cache
