@@ -1,14 +1,14 @@
 <div class="flex flex-col min-h-screen">
   <!-- Navigation Bar -->
-  <header class="bg-blue-600 text-white">
+  <header class="bg-gray-950 text-white">
     <nav class="container mx-auto p-4 flex justify-between items-center">
       <a href="/">
         <img src="header_logo.png" class="w-fit h-16" />
       </a>
       <div class="space-x-4">
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">About Us</button>
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">Games</button>
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">Team</button>
+        <button class="text-white font-semibold py-2 px-4 rounded">About Us</button>
+        <button class="text-white font-semibold py-2 px-4 rounded">Games</button>
+        <button class="text-white font-semibold py-2 px-4 rounded">Team</button>
       </div>
     </nav>
   </header>
@@ -20,56 +20,37 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-white">
+  <footer class="text-white">
     <div class="container mx-auto p-8 flex justify-evenly">
       <!-- Left Side: Logo and Copyright -->
       <div class="w-fit flex flex-col items-center justify-center">
         <img src="logo.png" alt="Logo" class="mb-4 mx-auto w-16 h-auto object-contain">
-        <p>Softsplit &copy; 2024</p>
+        <p class="opacity-25">Softsplit &copy; 2024</p>
       </div>
       <!-- Right Side: Columns -->
       <div class="w-3/6 flex justify-between">
         <!-- Column 1: Studio -->
-        <div class="flex flex-col items-center">
-          <h3 class="font-bold mb-2">Studio</h3>
+        <div class="flex flex-col items-center gap-1">
+          <h3 class="font-bold mb-2 opacity-50">Studio</h3>
           <ul class="text-center">
-            <li><a href="#" class="hover:underline">Games</a></li>
-            <li><a href="#" class="hover:underline">Team</a></li>
-            <li><a href="#" class="hover:underline">Legal</a></li>
-            <li><a href="#" class="hover:underline">Contact</a></li>
+            <li><a href="#">Games</a></li>
+            <li><a href="#">Team</a></li>
+            <li><a href="#">Legal</a></li>
+            <li><a href="#">Contact</a></li>
           </ul>
         </div>
         <!-- Column 2: Games -->
-        <div class="flex flex-col items-center">
-          <h3 class="font-bold mb-2">Games</h3>
+        <div class="flex flex-col items-center gap-1">
+          <h3 class="font-bold mb-2 opacity-50">Games</h3>
           <ul class="text-center">
-            <li><a href="#" class="hover:underline">Sandbox Classic</a></li>
-            <li><a href="#" class="hover:underline">S&amp;box Donut</a></li>
+            <li><a href="#">Sandbox Classic</a></li>
+            <li><a href="#">S&amp;box Donut</a></li>
           </ul>
         </div>
         <!-- Column 3: Socials -->
-        <div class="flex flex-col items-center">
-          <h3 class="font-bold mb-2">Socials</h3>
-          <div class="grid grid-cols-3 gap-2">
-            <button class="bg-gray-700 p-2 rounded">
-              <img src="socials/discord.svg" alt="Discord" class="w-5 h-5 object-contain">
-            </button>
-            <button class="bg-gray-700 p-2 rounded">
-              <img src="socials/youtube.svg" alt="YouTube" class="w-5 h-5 object-contain">
-            </button>
-            <button class="bg-gray-700 p-2 rounded">
-              <img src="socials/twitter.svg" alt="Twitter" class="w-5 h-5 object-contain">
-            </button>
-            <button class="bg-gray-700 p-2 rounded">
-              <img src="socials/bluesky.svg" alt="Bluesky" class="w-5 h-5 object-contain">
-            </button>
-            <button class="bg-gray-700 p-2 rounded">
-              <img src="socials/github.svg" alt="GitHub" class="w-5 h-5 object-contain">
-            </button>
-            <button class="bg-gray-700 p-2 rounded">
-              <img src="socials/sbox.svg" alt="sbox.game" class="w-5 h-5 object-contain">
-            </button>
-          </div>
+        <div class="flex flex-col items-center gap-1">
+          <h3 class="font-bold mb-2 opacity-50">Socials</h3>
+          <app-social-buttons />
         </div>
       </div>
     </div>
