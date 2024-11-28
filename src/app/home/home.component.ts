@@ -12,12 +12,12 @@ interface Particle {
 @Component({
   selector: 'app-home',
   template: `
-    <section class="hero-section h-screen flex justify-center bg-cover bg-center relative">
+    <section class="hero-section min-h-screen flex justify-center bg-cover bg-center relative">
       <canvas #particleCanvas class="absolute top-0 left-0 w-full h-full"></canvas>
       <div class="h-full w-full backdrop-blur-[1px] content-center relative">
-        <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+        <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 px-4 md:px-8 min-h-screen pb-24 pt-48">
           <div class="text-white md:w-1/2 text-center md:text-left">
-            <h1 class="text-xl md:text-7xl font-bold mb-4 animate-fade-in">
+            <h1 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 animate-fade-in leading-tight">
               We're a team of passionate individuals making stuff in our spare time.
             </h1>
           </div>
@@ -66,7 +66,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     if (!this.isBrowser) return;
 
-    this.particles = Array(this.PARTICLE_COUNT).fill(null).map(() => ({
+    // Adjust particle count based on screen width
+    const particleCount = window.innerWidth < 768 ? 40 : this.PARTICLE_COUNT;
+
+    this.particles = Array(particleCount).fill(null).map(() => ({
       x: Math.random() * window.innerWidth,
       y: Math.random() * window.innerHeight,
       vx: (Math.random() - 0.5) * 2,
