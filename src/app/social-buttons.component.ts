@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { SocialLink } from './models/social-link.model';
+
+interface SocialLink {
+  name: string;
+  icon: string;
+  url: string;
+}
 
 @Component({
   selector: 'app-social-buttons',
