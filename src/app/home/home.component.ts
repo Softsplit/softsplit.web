@@ -26,10 +26,10 @@ interface Game {
   template: `
     <section class="hero-section flex bg-cover bg-center relative min-h-[68.5vh] justify-center">
       <canvas #particleCanvas class="absolute w-full h-full"></canvas>
-      <div class="backdrop-blur-[1px] flex items-center justify-center w-full px-4 pt-20 pb-20 relative">
+      <div class="backdrop-blur-[1px] flex items-center justify-center w-full px-12 pt-20 pb-20 relative">
         <div class="absolute bottom-0 left-0 right-0 h-72 bg-gradient-to-t from-[#332416] to-transparent"></div>
-        <div class="text-white md:w-2/3 lg:w-1/2 text-center relative z-10">
-          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold animate-fade-in leading-tight drop-shadow-lg">
+        <div class="text-white md:w-2/3 lg:w-1/2 text-justify tracking-tighter relative z-10">
+          <h1 class="text-5xl lg:text-6xl font-bold animate-fade-in leading-tight drop-shadow-lg">
             <span class="text-white">We're a team of</span>
             <span class="text-[#fe8310]"> passionate individuals</span>
             <span class="text-white"> making stuff in our</span>
