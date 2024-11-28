@@ -12,15 +12,13 @@ interface Particle {
 @Component({
   selector: 'app-home',
   template: `
-    <section class="hero-section min-h-screen flex justify-center bg-cover bg-center relative">
-      <canvas #particleCanvas class="absolute top-0 left-0 w-full h-full"></canvas>
-      <div class="h-full w-full backdrop-blur-[1px] content-center relative">
-        <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 px-4 md:px-8 min-h-screen pb-24 pt-48">
-          <div class="text-white md:w-1/2 text-center md:text-left">
-            <h1 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 animate-fade-in leading-tight">
-              We're a team of passionate individuals making stuff in our spare time.
-            </h1>
-          </div>
+    <section class="hero-section flex bg-cover bg-center relative min-h-[68.5vh] justify-center">
+      <canvas #particleCanvas class="absolute w-full h-full"></canvas>
+      <div class="backdrop-blur-[1px] flex items-center justify-center w-full px-4 pt-40 pb-20">
+        <div class="text-white md:w-2/3 lg:w-1/2 text-center">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold animate-fade-in leading-tight">
+            We're a team of passionate individuals making stuff in our spare time.
+          </h1>
         </div>
       </div>
     </section>
@@ -56,7 +54,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   constructor(@Inject(PLATFORM_ID) platformId: Object) {
     this.isBrowser = isPlatformBrowser(platformId);
     this.resizeHandler = this.handleResize.bind(this);
-    
+
     if (this.isBrowser) {
       this.lastWidth = window.innerWidth;
       this.lastHeight = window.innerHeight;
@@ -113,7 +111,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   private resizeCanvas() {
     if (!this.isBrowser) return;
-    
+
     const canvas = this.canvasRef.nativeElement;
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -124,29 +122,29 @@ export class HomeComponent implements OnInit, AfterViewInit {
   private readonly CONNECTION_COLOR = 'rgba(254, 131, 16, 0.2)';
   private readonly GLOW_COLOR = 'rgba(254, 131, 16, 0.3)';
   private readonly BASE_SPEED = 0.5;  // Controls overall movement speed
-  
+
   private animate() {
     if (!this.isBrowser || !this.ctx) return;
 
     this.ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-    
+
     // Update particle positions
     this.particles.forEach(particle => {
-        // Update positions
-        particle.x += particle.vx * this.BASE_SPEED;
-        particle.y += particle.vy * this.BASE_SPEED;
-        
-        // Wrap around edges
-        if (particle.x < 0) particle.x = window.innerWidth;
-        if (particle.x > window.innerWidth) particle.x = 0;
-        if (particle.y < 0) particle.y = window.innerHeight;
-        if (particle.y > window.innerHeight) particle.y = 0;
+      // Update positions
+      particle.x += particle.vx * this.BASE_SPEED;
+      particle.y += particle.vy * this.BASE_SPEED;
+
+      // Wrap around edges
+      if (particle.x < 0) particle.x = window.innerWidth;
+      if (particle.x > window.innerWidth) particle.x = 0;
+      if (particle.y < 0) particle.y = window.innerHeight;
+      if (particle.y > window.innerHeight) particle.y = 0;
     });
-    
+
     // Draw connections
     for (let i = 0; i < this.particles.length; i++) {
       const particle = this.particles[i];
-      
+
       for (let j = i + 1; j < this.particles.length; j++) {
         const other = this.particles[j];
         const dx = other.x - particle.x;
@@ -168,14 +166,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.particles.forEach(particle => {
       this.ctx.beginPath();
       this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-      
+
       // Add glow effect
       this.ctx.shadowColor = this.GLOW_COLOR;
       this.ctx.shadowBlur = 15;
-      
+
       this.ctx.fillStyle = this.PARTICLE_COLOR;
       this.ctx.fill();
-      
+
       // Reset shadow
       this.ctx.shadowBlur = 0;
     });

@@ -1,20 +1,24 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NgClass } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [RouterLink, NgClass],
   template: `
-    <header class="w-full text-white fixed z-50">
-      <nav class="container mx-auto p-4 flex justify-between items-center h-20 relative z-50">
+    <header class="w-full h-20 text-white fixed z-50">
+      <nav class="container mx-auto p-4 flex justify-between items-center relative">
+        <!-- Logo -->
         <a routerLink="/">
-          <img src="header_logo.png" class="w-fit h-12" alt="Header Logo" />
+          <img src="header_logo.png" 
+               class="w-[120px] h-[40px] sm:w-[140px] sm:h-[45px] md:w-[160px] md:h-[50px] aspect-auto object-contain" 
+               alt="Header Logo" />
         </a>
         
         <!-- Desktop Menu -->
-        <div class="hidden md:flex space-x-4">
+        <div class="hidden md:flex space-x-4 z-20">
           <a routerLink="/about" class="text-white hover:text-orange-500 transition-colors font-semibold py-2 px-4 text-lg">About Us</a>
           <a routerLink="/games" class="text-white hover:text-orange-500 transition-colors font-semibold py-2 px-4 text-lg">Games</a>
           <a routerLink="/team" class="text-white hover:text-orange-500 transition-colors font-semibold py-2 px-4 text-lg">Team</a>
@@ -22,7 +26,7 @@ import { NgClass } from '@angular/common';
 
         <!-- Mobile Hamburger -->
         <button 
-          class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 relative z-50"
+          class="md:hidden flex flex-col justify-center justify-items-center w-8 h-8 space-y-1.5"
           (click)="toggleMenu()"
           aria-label="Toggle menu">
           <span class="w-6 h-0.5 bg-white transform transition-transform duration-300" 
@@ -34,14 +38,36 @@ import { NgClass } from '@angular/common';
         </button>
       </nav>
 
-      <!-- Mobile Menu Overlay -->
-      <div class="md:hidden fixed h-screen top-20 bottom-0 left-0 right-0 backdrop-blur-xl bg-black/80 transform transition-all duration-300 ease-in-out flex items-center content-center justify-center z-40 pb-44"
-           [ngClass]="{'translate-x-0 opacity-100': isMenuOpen(), 'translate-x-full opacity-0': !isMenuOpen()}">
-        <div class="flex flex-col items-center justify-center space-y-12 w-full">
-          <a routerLink="/about" class="text-white font-semibold text-3xl hover:text-orange-500 transition-colors" (click)="toggleMenu()">About Us</a>
-          <a routerLink="/games" class="text-white font-semibold text-3xl hover:text-orange-500 transition-colors" (click)="toggleMenu()">Games</a>
-          <a routerLink="/team" class="text-white font-semibold text-3xl hover:text-orange-500 transition-colors" (click)="toggleMenu()">Team</a>
-        </div>
+      <!-- Mobile Menu -->
+      <div class="md:hidden fixed inset-0 top-20 transition-all duration-300 ease-in-out z-30"
+           [ngClass]="{'opacity-0 pointer-events-none translate-x-full': !isMenuOpen(), 
+                      'opacity-100 translate-x-0': isMenuOpen()}">
+          <!-- Menu content -->
+          <div class="relative h-[calc(100vh-5rem)] overflow-y-auto bg-gradient-to-b from-black/95 to-black/90">
+            <div class="flex flex-col items-center justify-center min-h-full py-4">
+              <a routerLink="/about" 
+                 (click)="toggleMenu()"
+                 class="text-3xl sm:text-2xl
+                 text-white hover:text-orange-500 transition-colors 
+                 font-semibold px-4 py-3 w-full text-center">
+                 About Us
+              </a>
+              <a routerLink="/games"
+                 (click)="toggleMenu()" 
+                 class="text-3xl sm:text-2xl
+                 text-white hover:text-orange-500 transition-colors 
+                 font-semibold px-4 py-3 w-full text-center">
+                 Games
+              </a>
+              <a routerLink="/team"
+                 (click)="toggleMenu()"
+                 class="text-3xl sm:text-2xl
+                 text-white hover:text-orange-500 transition-colors 
+                 font-semibold px-4 py-3 w-full text-center">
+                 Team
+              </a>
+            </div>
+          </div>
       </div>
     </header>
   `,
@@ -56,10 +82,30 @@ import { NgClass } from '@angular/common';
     }
   `]
 })
-export class HeaderComponent {
-  isMenuOpen = signal(false);
+export class HeaderComponent implements OnDestroy {
+  private menuOpen = signal(false);
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
+  isMenuOpen() {
+    return this.menuOpen();
+  }
+
+  private toggleBodyScroll(disable: boolean) {
+    if (isPlatformBrowser(this.platformId)) {
+      document.body.style.overflow = disable ? 'hidden' : '';
+    }
+  }
 
   toggleMenu() {
-    this.isMenuOpen.update(value => !value);
+    this.menuOpen.update(value => {
+      const newValue = !value;
+      this.toggleBodyScroll(newValue);
+      return newValue;
+    });
+  }
+
+  ngOnDestroy() {
+    this.toggleBodyScroll(false);
   }
 }
