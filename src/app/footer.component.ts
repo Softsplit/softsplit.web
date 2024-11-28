@@ -18,17 +18,15 @@ import { SocialButtonsComponent } from './social-buttons.component';
           <div class="flex flex-col items-center gap-2">
             <h3 class="font-bold opacity-50">Studio</h3>
             <ul class="text-center space-y-1">
-              <li><a routerLink="/games">Games</a></li>
-              <li><a routerLink="/team">Team</a></li>
-              <li><a routerLink="/legal">Legal</a></li>
-              <li><a routerLink="/contact">Contact</a></li>
+              <li><a class="hover:text-orange-500 transition-colors" href="/#games">Games</a></li>
+              <li><a class="hover:text-orange-500 transition-colors" routerLink="/team">Team</a></li>
             </ul>
           </div>
           <div class="flex flex-col items-center gap-2">
             <h3 class="font-bold opacity-50">Games</h3>
             <ul class="text-center space-y-1">
-              <li><a href="#">Sandbox Classic</a></li>
-              <li><a href="#">S&box Donut</a></li>
+              <li><a class="hover:text-orange-500 transition-colors" href="https://sbox.game/softsplit/sandbox">Sandbox Classic</a></li>
+              <li><a class="hover:text-orange-500 transition-colors" href="https://sbox.game/softsplit/donut">S&box Donut</a></li>
             </ul>
           </div>
           <div class="flex flex-col items-center gap-2">

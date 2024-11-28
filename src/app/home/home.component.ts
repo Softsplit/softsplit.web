@@ -38,7 +38,7 @@ interface Game {
         </div>
       </div>
     </section>
-    <section class="games-section flex py-20 px-4 relative justify-center">
+    <section id="games" class="games-section flex py-20 px-4 relative justify-center">
       <div class="absolute inset-0 bg-gradient-to-b from-[#332416] to-[black]"></div>
       <div class="container mx-auto max-w-sm md:max-w-3xl relative z-10">
         <h2 class="text-4xl font-bold text-white mb-12 text-center md:text-left drop-shadow-lg">Our games.</h2>
