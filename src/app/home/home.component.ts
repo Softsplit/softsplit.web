@@ -12,7 +12,7 @@ interface Particle {
 @Component({
   selector: 'app-home',
   template: `
-    <section class="hero-section h-screen flex justify-center bg-cover relative">
+    <section class="hero-section h-screen flex justify-center bg-cover bg-center relative">
       <canvas #particleCanvas class="absolute top-0 left-0 w-full h-full"></canvas>
       <div class="h-full w-full backdrop-blur-[1px] content-center relative">
         <div class="flex flex-col md:flex-row items-center justify-center gap-8">
