@@ -21,9 +21,10 @@ import { RouterLink } from '@angular/router';
   `,
   styles: `
     header {
-      font-family: "League Spartan";
+      font-family: 'League Spartan';
       background: rgba(13, 13, 13, 0.9);
-      backdrop-filter: blur(45);
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noiseFilter)' opacity='0.1'/%3E%3C/svg%3E");
+      backdrop-filter: blur(45px);
       box-shadow: 0px 4px 2.3px 0px rgba(0, 0, 0, 0.06);
       border-bottom: 0.75px solid rgba(88, 88, 88, 1)
     }

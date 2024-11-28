@@ -41,6 +41,7 @@ import { SocialButtonsComponent } from './social-buttons.component';
   `,
   styles: `
     footer {
+      font-family: 'League Spartan';
       background: rgba(14, 14, 14, 1);
       
       .fake-border {
