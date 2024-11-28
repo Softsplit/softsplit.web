@@ -1,9 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "cli": {
-    "packageManager": "npm"
-  },
   "newProjectRoot": "projects",
   "projects": {
     "softsplit-web": {
@@ -20,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist",
+            "outputPath": "dist/softsplit-web",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -32,8 +29,7 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              },
-              "src/_routes.json"
+              }
             ],
             "styles": [
               "src/styles.scss"
@@ -42,8 +38,7 @@
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {
-              "entry": "src/server.ts",
-              "experimentalPlatform": "neutral"
+              "entry": "src/server.ts"
             }
           },
           "configurations": {

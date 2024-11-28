@@ -3,13 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run build && wrangler pages dev dist/cloudflare --compatibility-date=2024-11-12 --experimental-local",
-    "build": "ng build && npm run process",
+    "start": "ng serve",
+    "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:softsplit-web": "node dist/softsplit-web/server/server.mjs",
-    "process": "node ./tools/copy-files.mjs",
-    "deploy": "npm run build && wrangler pages deploy dist/cloudflare"
+    "serve:ssr:softsplit-web": "node dist/softsplit-web/server/server.mjs"
   },
   "private": true,
   "dependencies": {
@@ -22,17 +20,17 @@
     "@angular/platform-browser-dynamic": "^19.0.0",
     "@angular/platform-server": "^19.0.0",
     "@angular/router": "^19.0.0",
-    "@angular/ssr": "^19.0.0",
+    "@angular/ssr": "^19.0.2",
+    "express": "^4.18.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^19.0.0",
-    "@angular/cli": "^19.0.0",
+    "@angular-devkit/build-angular": "^19.0.2",
+    "@angular/cli": "^19.0.2",
     "@angular/compiler-cli": "^19.0.0",
-    "@cloudflare/workers-types": "^4.20241112.0",
-    "@miniflare/tre": "^3.0.0-next.13",
+    "@types/express": "^4.17.17",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^18.18.0",
     "autoprefixer": "^10.4.20",
@@ -44,7 +42,6 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.15",
-    "typescript": "~5.6.2",
-    "wrangler": "^0.0.0-4ab073cf4"
+    "typescript": "~5.6.2"
   }
 }
