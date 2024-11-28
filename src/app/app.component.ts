@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
+import { TitleService } from './title.service';
+
 import { HeaderComponent } from './header.component';
 import { FooterComponent } from './footer.component';
 
@@ -11,5 +13,5 @@ import { FooterComponent } from './footer.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'softsplit-web';
+  constructor(private titleService: TitleService) {}
 }
