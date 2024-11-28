@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild, OnInit, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
@@ -9,16 +10,55 @@ interface Particle {
   size: number;
 }
 
+interface Game {
+  id: number;
+  title: string;
+  description: string;
+  imageUrl: string;
+  link: string;
+  year: number;
+}
+
 @Component({
   selector: 'app-home',
+  standalone: true, 
+  imports: [CommonModule],
   template: `
     <section class="hero-section flex bg-cover bg-center relative min-h-[68.5vh] justify-center">
       <canvas #particleCanvas class="absolute w-full h-full"></canvas>
-      <div class="backdrop-blur-[1px] flex items-center justify-center w-full px-4 pt-40 pb-20">
-        <div class="text-white md:w-2/3 lg:w-1/2 text-center">
-          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold animate-fade-in leading-tight">
-            We're a team of passionate individuals making stuff in our spare time.
+      <div class="backdrop-blur-[1px] flex items-center justify-center w-full px-4 pt-20 pb-20 relative">
+        <div class="absolute bottom-0 left-0 right-0 h-72 bg-gradient-to-t from-[#332416] to-transparent"></div>
+        <div class="text-white md:w-2/3 lg:w-1/2 text-center relative z-10">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold animate-fade-in leading-tight drop-shadow-lg">
+            <span class="text-white">We're a team of</span>
+            <span class="text-[#fe8310]"> passionate individuals</span>
+            <span class="text-white"> making stuff in our</span>
+            <span class="text-[#fe8310]"> spare time.</span>
           </h1>
+        </div>
+      </div>
+    </section>
+    <section class="games-section flex py-20 px-4 relative justify-center">
+      <div class="absolute inset-0 bg-gradient-to-b from-[#332416] to-[black]"></div>
+      <div class="container mx-auto max-w-sm md:max-w-3xl relative z-10">
+        <h2 class="text-4xl font-bold text-white mb-12 text-center md:text-left drop-shadow-lg">Our games.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          @for (game of games; track game.id) {
+            <div class="game-card bg-[#2a1f1a] rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl flex flex-col h-full">
+              <img [src]="game.imageUrl" [alt]="game.title" class="w-full h-48 object-cover">
+              <div class="p-6 flex flex-col flex-grow">
+                <h3 class="text-[#fe8310] text-xl font-bold mb-2">{{game.title}}</h3>
+                <p class="text-gray-300 mb-4">{{game.description}}</p>
+                <div class="mt-auto flex justify-between items-center">
+                  <span class="text-gray-400">{{game.year}}</span>
+                  <a [href]="game.link" target="_blank" 
+                     class="px-4 py-2 bg-[#fe8310] text-white rounded-md hover:bg-[#ff9635] transition-colors">
+                    Play Now
+                  </a>
+                </div>
+              </div>
+            </div>
+          }
         </div>
       </div>
     </section>
@@ -37,6 +77,33 @@ interface Particle {
     .animate-fade-in {
       animation: fade-in 0.6s ease-out;
     }
+
+    .games-section {
+      font-family: 'League Spartan';
+    }
+    
+    .game-card {
+      box-shadow: 0 4px 6px -1px rgba(254, 131, 16, 0.1);
+      display: flex;
+      flex-direction: column;
+      height: 100%; 
+    }
+    
+    .game-card:hover {
+      box-shadow: 0 20px 25px -5px rgba(254, 131, 16, 0.2);
+    }
+
+    .game-card-content {
+      flex: 1;  
+    }
+
+    .game-card-footer {
+      margin-top: auto; 
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1rem;
+    }
   `]
 })
 export class HomeComponent implements OnInit, AfterViewInit {
@@ -47,9 +114,28 @@ export class HomeComponent implements OnInit, AfterViewInit {
   private animationFrameId: number = 0;
   private isBrowser: boolean;
   private readonly PARTICLE_COUNT = 80;
-  private lastWidth: number = 0; // Default value for SSR
-  private lastHeight: number = 0; // Default value for SSR
+  private lastWidth: number = 0; 
+  private lastHeight: number = 0; 
   private resizeHandler: () => void;
+
+  public games: Game[] = [
+    {
+      id: 1,
+      title: "S&box Donut",
+      description: "Immerse yourself in the tantalizing thrill of staring at (or munching on) a spinning ASCII torus, as you ponder life's deepest questions.",
+      imageUrl: "/games/sboxdonut.png",
+      link: "https://sbox.game/softsplit/donut",
+      year: 2024
+    },
+    {
+      id: 2,
+      title: "Sandbox Classic",
+      description: "An open-source, community-developed port of the original Sandbox for the scene system.",
+      imageUrl: "/games/sandboxclassic.png",
+      link: "https://sbox.game/softsplit/sandbox",
+      year: 2024
+    }
+  ];
 
   constructor(@Inject(PLATFORM_ID) platformId: Object) {
     this.isBrowser = isPlatformBrowser(platformId);
@@ -118,10 +204,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   private readonly NODE_DISTANCE = 100;
-  private readonly PARTICLE_COLOR = 'rgba(254, 131, 16, 0.6)'; // Match orange from background
+  private readonly PARTICLE_COLOR = 'rgba(254, 131, 16, 0.6)'; 
   private readonly CONNECTION_COLOR = 'rgba(254, 131, 16, 0.2)';
   private readonly GLOW_COLOR = 'rgba(254, 131, 16, 0.3)';
-  private readonly BASE_SPEED = 0.5;  // Controls overall movement speed
+  private readonly BASE_SPEED = 0.5;  
 
   private animate() {
     if (!this.isBrowser || !this.ctx) return;
