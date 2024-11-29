@@ -40,8 +40,8 @@ interface Game {
         <app-social-buttons class="hero-social-buttons mt-8 relative z-10" />
       </div>
     </section>
-    <section id="games" class="games-section flex py-20 px-4 relative justify-center">
-      <div class="absolute inset-0 bg-gradient-to-b from-[#332416] to-[black]"></div>
+    <section id="games" class="games-section flex bg-cover bg-center py-20 px-4 relative justify-center">
+      <div class="absolute h-[100%] inset-0 bg-gradient-to-b from-[#332416] via-[#33241680] to-transparent"></div>
       <div class="container max-w-sm md:max-w-3xl relative z-10">
         <h2 class="text-4xl font-bold text-white mb-12 text-center md:text-left drop-shadow-lg">Our games :)</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -54,8 +54,9 @@ interface Game {
                 <div class="mt-auto flex justify-between items-center">
                   <span class="text-gray-400">{{game.year}}</span>
                   <a [href]="game.link" target="_blank" 
-                    class="px-4 py-2 bg-[#fe8310] text-white rounded-md hover:bg-[#ff9635] transition-colors">
-                    Play Now
+                    class="px-4 py-2 bg-[#fe8310] text-white rounded-md hover:bg-[#ff9635] transition-colors inline-flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[20px] translate-y-[-2px]">play_arrow</span>
+                    Play now
                   </a>
                 </div>
               </div>
@@ -82,6 +83,7 @@ interface Game {
 
     .games-section {
       font-family: 'League Spartan';
+      background-image: radial-gradient(circle, rgba(102,102,102,1) 0%, rgba(102,102,102,0.75) 0%, rgba(51,36,22,1) 100%), url('/games_bg.png');
     }
     
     .game-card {
