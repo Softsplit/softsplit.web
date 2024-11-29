@@ -6,7 +6,7 @@ interface Game {
   description: string;
   imageUrl: string;
   link: string;
-  year: string;
+  date: string;
 }
 
 @Component({
@@ -19,7 +19,7 @@ interface Game {
         <h3 class="text-[#fe8310] text-xl font-bold mb-2">{{game.title}}</h3>
         <p class="text-gray-300 mb-4">{{game.description}}</p>
         <div class="mt-auto flex justify-between items-center pt-4">
-          <span class="text-gray-400">{{game.year}}</span>
+          <span class="text-gray-400">{{game.date}}</span>
           <a [href]="game.link" target="_blank" 
              class="px-4 py-2 bg-[#fe8310] text-white rounded-md hover:bg-[#ff9635] transition-colors inline-flex items-center gap-1">
             <span class="material-symbols-outlined text-[20px] translate-y-[-2px]">play_arrow</span>

@@ -18,7 +18,7 @@ import { GridService } from './grid.service';
   template: `
     <section class="hero-section font-['League_Spartan'] flex bg-cover bg-center relative min-h-screen justify-center">
       <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover -z-10">
-        <source src="/hero_bg.mp4" type="video/mp4">
+        <source src="hero_bg.mp4" type="video/mp4">
       </video>
       <div class="absolute inset-0 hero-gradient -z-5"></div>
       <canvas #gridCanvas class="absolute w-full h-full z-0"></canvas>
@@ -73,7 +73,7 @@ import { GridService } from './grid.service';
           </div>
           <div class="relative mx-4">
             <div class="absolute inset-0 bg-gradient-to-r from-[#fe8310]/20 to-transparent rounded-lg"></div>
-            <img src="/about_img.png" alt="Team Collaboration" class="w-full h-auto rounded-lg shadow-xl py-8" loading="lazy">
+            <img src="about_img.png" alt="Team Collaboration" class="w-full h-auto rounded-lg shadow-xl py-8" loading="lazy">
           </div>
         </div>
       </div>
@@ -105,7 +105,7 @@ export class HomeComponent implements AfterViewInit {
       description: "Immerse yourself in the tantalizing thrill of staring at (or munching on) a spinning ASCII torus, as you ponder life's deepest questions.",
       imageUrl: "/games/sboxdonut.png",
       link: "https://sbox.game/softsplit/donut",
-      year: "February 2024"
+      date: "February 2024"
     },
     {
       id: 2,
@@ -113,7 +113,7 @@ export class HomeComponent implements AfterViewInit {
       description: "An open-source, community-developed port of the original Sandbox for the scene system.",
       imageUrl: "/games/sandboxclassic.png",
       link: "https://sbox.game/softsplit/sandbox",
-      year: "April 2024"
+      date: "April 2024"
     }
   ];
 
