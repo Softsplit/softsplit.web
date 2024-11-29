@@ -49,19 +49,19 @@ import { isPlatformBrowser } from '@angular/common';
             <a routerLink="/#about" 
                (click)="toggleMenu()"
                class="text-4xl text-white hover:text-orange-500 transition-colors font-semibold px-4 py-3 w-full text-center inline-flex items-center justify-center gap-3">
-               <span class="material-symbols-outlined text-[32px] translate-y-[-4px]">info</span>
+               <span class="material-symbols-outlined text-[32px] translate-y-[-3px]">info</span>
                About Us
             </a>
             <a routerLink="/#games"
                (click)="toggleMenu()" 
                class="text-4xl text-white hover:text-orange-500 transition-colors font-semibold px-4 py-3 w-full text-center inline-flex items-center justify-center gap-3">
-               <span class="material-symbols-outlined text-[32px] translate-y-[-4px]">sports_esports</span>
+               <span class="material-symbols-outlined text-[32px] translate-y-[-3px]">sports_esports</span>
                Games
             </a>
             <a routerLink="/team"
                (click)="toggleMenu()" 
                class="text-4xl text-white hover:text-orange-500 transition-colors font-semibold px-4 py-3 w-full text-center inline-flex items-center justify-center gap-3">
-               <span class="material-symbols-outlined text-[32px] translate-y-[-4px]">group</span>
+               <span class="material-symbols-outlined text-[32px] translate-y-[-3px]">group</span>
                Team
             </a>
           </div>
