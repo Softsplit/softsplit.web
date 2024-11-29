@@ -26,12 +26,7 @@ interface Game {
   imports: [CommonModule, SocialButtonsComponent],
   template: `
     <section class="hero-section flex bg-cover bg-center relative min-h-screen justify-center">
-      <video 
-        autoplay 
-        muted 
-        loop 
-        playsinline 
-        class="absolute inset-0 w-full h-full object-cover -z-10">
+      <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover -z-10">
         <source src="/hero_bg.mp4" type="video/mp4">
       </video>
       <div class="absolute inset-0 bg-gradient hero-gradient"></div>
@@ -69,6 +64,19 @@ interface Game {
                   </a>
                 </div>
               </div>
+            </div>
+          }
+        </div>
+      </div>
+    </section>
+    <section class="achievements-section flex bg-cover bg-center py-16 relative justify-center">
+      <div class="absolute inset-0 bg-gradient-to-b from-[#332416] to-transparent"></div>
+      <div class="container max-w-5xl relative z-10 px-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          @for (stat of statistics; track stat.label) {
+            <div class="flex flex-col items-center text-center py-5">
+              <span class="text-[#fe8310] text-5xl font-bold mb-2">{{stat.value}}</span>
+              <span class="text-white text-lg">{{stat.label}}</span>
             </div>
           }
         </div>
@@ -121,6 +129,11 @@ interface Game {
       align-items: center;
       padding-top: 1rem;
     }
+
+    .achievements-section {
+      font-family: 'League Spartan';
+      background: #1f1a16;
+    }
   `]
 })
 export class HomeComponent implements OnInit, AfterViewInit {
@@ -152,6 +165,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
       link: "https://sbox.game/softsplit/sandbox",
       year: 2024
     }
+  ];
+
+  readonly statistics = [
+    { value: '2+', label: 'Games Released' },
+    { value: '400+', label: 'Discord Members' },
+    { value: '50K+', label: 'Unique Players' },
+    { value: '0', label: 'Incidents' }
   ];
 
   constructor(@Inject(PLATFORM_ID) platformId: Object) {
