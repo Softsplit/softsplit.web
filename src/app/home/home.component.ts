@@ -24,7 +24,7 @@ interface Game {
   standalone: true, 
   imports: [CommonModule],
   template: `
-    <section class="hero-section flex bg-cover bg-center relative min-h-[68.5vh] justify-center">
+    <section class="hero-section flex bg-cover bg-center relative min-h-[68.5vh] lg:min-h-[85vh] xl:min-h-[90vh] justify-center">
       <canvas #particleCanvas class="absolute w-full h-full"></canvas>
       <div class="backdrop-blur-[1px] flex items-center justify-center w-full px-12 pt-[10rem] pb-20 relative">
         <div class="absolute bottom-0 left-0 right-0 h-72 bg-gradient-to-t from-[#332416] to-transparent"></div>
@@ -41,8 +41,8 @@ interface Game {
     </section>
     <section id="games" class="games-section flex py-20 px-4 relative justify-center">
       <div class="absolute inset-0 bg-gradient-to-b from-[#332416] to-[black]"></div>
-      <div class="container mx-auto max-w-sm md:max-w-3xl relative z-10">
-        <h2 class="text-4xl font-bold text-white mb-12 text-center md:text-left drop-shadow-lg">Our games.</h2>
+      <div class="container max-w-sm md:max-w-3xl relative z-10">
+        <h2 class="text-4xl font-bold text-white mb-12 text-center md:text-left drop-shadow-lg">Our games :)</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           @for (game of games; track game.id) {
             <div class="game-card bg-[#2a1f1a] rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl flex flex-col h-full">
@@ -53,7 +53,7 @@ interface Game {
                 <div class="mt-auto flex justify-between items-center">
                   <span class="text-gray-400">{{game.year}}</span>
                   <a [href]="game.link" target="_blank" 
-                     class="px-4 py-2 bg-[#fe8310] text-white rounded-md hover:bg-[#ff9635] transition-colors">
+                    class="px-4 py-2 bg-[#fe8310] text-white rounded-md hover:bg-[#ff9635] transition-colors">
                     Play Now
                   </a>
                 </div>
