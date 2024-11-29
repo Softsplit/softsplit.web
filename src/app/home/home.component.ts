@@ -25,7 +25,7 @@ interface Game {
   standalone: true, 
   imports: [CommonModule, SocialButtonsComponent],
   template: `
-    <section class="hero-section flex bg-cover bg-center relative min-h-[68.5vh] lg:min-h-[85vh] xl:min-h-[90vh] justify-center">
+    <section class="hero-section flex bg-cover bg-center relative min-h-screen justify-center">
       <canvas #particleCanvas class="absolute w-full h-full"></canvas>
       <div class="backdrop-blur-[1px] flex flex-col items-center justify-center w-full px-12 pt-[10rem] pb-20 relative">
         <div class="absolute bottom-0 left-0 right-0 h-[50%] bg-gradient-to-t from-[#332416] via-[#33241680] to-transparent"></div>
