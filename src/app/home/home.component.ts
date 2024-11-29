@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild, OnInit, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { SocialButtonsComponent } from "../social-buttons.component";
 
 interface Particle {
   x: number;
@@ -22,21 +23,21 @@ interface Game {
 @Component({
   selector: 'app-home',
   standalone: true, 
-  imports: [CommonModule],
+  imports: [CommonModule, SocialButtonsComponent],
   template: `
     <section class="hero-section flex bg-cover bg-center relative min-h-[68.5vh] lg:min-h-[85vh] xl:min-h-[90vh] justify-center">
       <canvas #particleCanvas class="absolute w-full h-full"></canvas>
-      <div class="backdrop-blur-[1px] flex items-center justify-center w-full px-12 pt-[10rem] pb-20 relative">
-        <div class="absolute bottom-0 left-0 right-0 h-72 bg-gradient-to-t from-[#332416] to-transparent"></div>
-        <!-- Changed div classes to center content -->
-        <div class="text-white w-full md:w-2/3 lg:w-1/2 flex flex-col items-center">
+      <div class="backdrop-blur-[1px] flex flex-col items-center justify-center w-full px-12 pt-[10rem] pb-20 relative">
+        <div class="absolute bottom-0 left-0 right-0 h-[50%] bg-gradient-to-t from-[#332416] via-[#33241680] to-transparent"></div>
+        <div class="text-white w-full md:w-2/3 lg:w-1/2 flex flex-col items-center relative z-10">
           <h1 class="text-5xl lg:text-6xl font-bold animate-fade-in leading-tight drop-shadow-lg text-center">
-            <span class="text-white">We're a team of</span>
-            <span class="text-[#fe8310]"> passionate individuals</span>
-            <span class="text-white"> making stuff in our</span>
+            <span class="text-white">We're</span>
+            <span class="text-[#fe8310]"> creating</span>
+            <span class="text-white"> exciting new experiences in our</span>
             <span class="text-[#fe8310]"> spare time.</span>
           </h1>
         </div>
+        <app-social-buttons class="hero-social-buttons mt-8 relative z-10" />
       </div>
     </section>
     <section id="games" class="games-section flex py-20 px-4 relative justify-center">

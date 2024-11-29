@@ -10,7 +10,7 @@ interface SocialLink {
   selector: 'app-social-buttons',
   standalone: true,
   template: `
-    <div class="grid grid-cols-3 gap-2">
+    <div class="grid auto-rows-auto gap-4 social-buttons-grid">
       @for (social of socialLinks; track social.name) {
         <a 
           [href]="social.url"
@@ -31,6 +31,47 @@ interface SocialLink {
   styles: [`
     :host {
       display: block;
+    }
+    
+    .social-buttons-grid {
+      grid-template-columns: repeat(3, auto);
+    }
+    
+    :host(.hero-social-buttons) {
+      margin-top: 2rem;
+      
+      .social-buttons-grid {
+        grid-template-columns: auto-fit;
+        grid-auto-flow: column;
+        justify-content: center;
+        gap: 1rem;
+
+        @media (min-width: 768px) {
+          grid-template-columns: repeat(4, auto);
+        }
+      }
+      
+      a {
+        padding: 0.1rem; // Larger border for hero section buttons
+      }
+      
+      a div {
+        padding: 0.75rem;
+        
+        @media (min-width: 768px) {
+          padding: 1rem;
+        }
+      }
+      
+      img {
+        width: 1.25rem;
+        height: 1.25rem;
+        
+        @media (min-width: 768px) {
+          width: 1.75rem;
+          height: 1.75rem;
+        }
+      }
     }
     
     a {
