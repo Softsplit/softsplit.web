@@ -11,8 +11,8 @@ import { SocialButtonsComponent } from './social-buttons.component';
       <div class="absolute w-full h-px fake-border"></div>
       <div class="container mx-auto py-12 px-6 flex flex-col lg:flex-row justify-evenly gap-12 items-center">
         <div class="w-fit flex flex-col md:items-start order-2 lg:order-none">
-          <img src="logo.png" alt="Logo" class="mb-4 w-32 h-auto object-contain">
-          <p class="opacity-25">Softsplit &copy; 2024</p>
+          <img src="footer_logo.png" alt="Logo" class="mb-4 w-32 h-auto object-contain">
+          <p class="opacity-25">&copy; 2024 Softsplit</p>
         </div>
         <div class="w-full md:w-1/2 flex flex-col lg:flex-row justify-between gap-8 order-1 md:order-none">
           <div class="flex flex-col items-center gap-2">
