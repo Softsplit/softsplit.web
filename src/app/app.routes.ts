@@ -6,10 +6,14 @@ import { TeamComponent } from './team/team.component';
 export const routes: Routes = [
     {
         path: '',
-        component: HomeComponent,
+        component: HomeComponent
     },
     {
         path: 'team',
-        component: TeamComponent,
-    }
+        component: TeamComponent
+    },
+    {
+        path: '**',
+        redirectTo: ''
+    },
 ];
