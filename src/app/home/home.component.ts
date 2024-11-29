@@ -26,13 +26,22 @@ interface Game {
   imports: [CommonModule, SocialButtonsComponent],
   template: `
     <section class="hero-section flex bg-cover bg-center relative min-h-screen justify-center">
+      <video 
+        autoplay 
+        muted 
+        loop 
+        playsinline 
+        class="absolute inset-0 w-full h-full object-cover -z-10">
+        <source src="/hero_bg.mp4" type="video/mp4">
+      </video>
+      <div class="absolute inset-0 bg-gradient hero-gradient"></div>
       <canvas #particleCanvas class="absolute w-full h-full"></canvas>
       <div class="backdrop-blur-[1px] flex flex-col items-center justify-center w-full px-12 pt-[10rem] pb-20 relative">
         <div class="absolute bottom-0 left-0 right-0 h-[50%] bg-gradient-to-t from-[#332416] via-[#33241680] to-transparent"></div>
         <div class="text-white w-full md:w-2/3 lg:w-1/2 flex flex-col items-center relative z-10">
           <h1 class="text-5xl lg:text-6xl font-bold animate-fade-in leading-tight drop-shadow-lg text-center">
             <span class="text-white">We're</span>
-            <span class="text-[#fe8310]"> creating</span>
+            <span class="text-[#fe8310]"> building</span>
             <span class="text-white"> exciting new experiences in our</span>
             <span class="text-[#fe8310]"> spare time.</span>
           </h1>
@@ -69,7 +78,11 @@ interface Game {
   styles: [`
     .hero-section {
       font-family: 'League Spartan';
-      background-image: radial-gradient(circle, rgba(254,131,16,1) 0%, rgba(254,131,16,0.75) 0%, rgba(51,36,22,1) 100%), url('/hero_bg.jpg');
+    }
+
+    .hero-gradient {
+      background: radial-gradient(circle, rgba(254,131,16,1) 0%, rgba(254,131,16,0.75) 0%, rgba(51,36,22,1) 100%);
+      z-index: -5;
     }
 
     @keyframes fade-in {
