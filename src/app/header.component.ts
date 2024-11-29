@@ -35,11 +35,11 @@ import { isPlatformBrowser } from '@angular/common';
         </button>
       </nav>
 
-      <div class="md:hidden fixed inset-0 top-20 transition-all duration-300 ease-in-out z-30 backdrop-blur-lg"
+      <div class="md:hidden fixed inset-0 top-20 transition-all duration-300 ease-in-out z-30"
            [ngClass]="{'opacity-0 pointer-events-none translate-x-full': !isMenuOpen(), 
                       'opacity-100 translate-x-0': isMenuOpen()}">
           <div class="mobile-menu-bg relative h-[calc(100vh-5rem)] overflow-y-auto">
-            <div class="flex flex-col items-center justify-center min-h-full py-4">
+            <div class="flex flex-col items-center justify-center min-h-full py-4 backdrop-blur-xl">
               <a routerLink="/#about" 
                  (click)="toggleMenu()"
                  class="text-4xl text-white hover:text-orange-500 transition-colors font-semibold px-4 py-3 w-full text-center">
