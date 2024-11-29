@@ -1,9 +1,10 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { GameCardComponent } from './game-card.component';
 import { StatisticCardComponent } from './statistic-card.component';
 import { SocialButtonsComponent } from '../shared/social-buttons.component';
+import { GridService } from './grid.service';
 
 @Component({
   selector: 'app-home',
@@ -20,7 +21,7 @@ import { SocialButtonsComponent } from '../shared/social-buttons.component';
         <source src="/hero_bg.mp4" type="video/mp4">
       </video>
       <div class="absolute inset-0 hero-gradient -z-5"></div>
-      <canvas #particleCanvas class="absolute w-full h-full"></canvas>
+      <canvas #gridCanvas class="absolute w-full h-full z-0"></canvas>
       <div class="backdrop-blur-[1px] flex flex-col items-center justify-center w-full px-12 pt-[10rem] pb-20 relative">
       <div class="absolute bottom-0 left-0 right-0 h-[50%] bg-gradient-to-t from-[#332416] to-transparent"></div>
         <div class="text-white w-full md:w-2/3 lg:w-1/2 flex flex-col items-center relative z-10">
@@ -88,7 +89,15 @@ import { SocialButtonsComponent } from '../shared/social-buttons.component';
     }
   `]
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit {
+  @ViewChild('gridCanvas') gridCanvas!: ElementRef<HTMLCanvasElement>;
+
+  constructor(private gridService: GridService) {}
+
+  ngAfterViewInit() {
+    this.gridService.drawGrid(this.gridCanvas.nativeElement);
+  }
+
   readonly games = [
     {
       id: 1,
