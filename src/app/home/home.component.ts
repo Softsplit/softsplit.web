@@ -32,9 +32,9 @@ interface Game {
       <div class="absolute inset-0 bg-gradient hero-gradient"></div>
       <canvas #particleCanvas class="absolute w-full h-full"></canvas>
       <div class="backdrop-blur-[1px] flex flex-col items-center justify-center w-full px-12 pt-[10rem] pb-20 relative">
-        <div class="absolute bottom-0 left-0 right-0 h-[50%] bg-gradient-to-t from-[#332416] via-[#33241680] to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 h-[100%] bg-gradient-to-t from-[#332416] via-[#33241680] to-transparent"></div>
         <div class="text-white w-full md:w-2/3 lg:w-1/2 flex flex-col items-center relative z-10">
-          <h1 class="text-5xl lg:text-6xl font-bold animate-fade-in leading-tight drop-shadow-lg text-center">
+          <h1 class="text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg text-center">
             <span class="text-white">We're</span>
             <span class="text-[#fe8310]"> building</span>
             <span class="text-white"> exciting new experiences in our</span>
@@ -91,15 +91,6 @@ interface Game {
     .hero-gradient {
       background: radial-gradient(circle, rgba(254,131,16,1) 0%, rgba(254,131,16,0.75) 0%, rgba(51,36,22,1) 100%);
       z-index: -5;
-    }
-
-    @keyframes fade-in {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    .animate-fade-in {
-      animation: fade-in 0.6s ease-out;
     }
 
     .games-section {
