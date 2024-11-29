@@ -86,7 +86,7 @@ interface Game {
       <div class="absolute inset-0 bg-gradient-to-b from-[#1f1a16] to-[black]"></div>
       <div class="container max-w-5xl relative z-10 px-4">
         <div class="text-center mb-12">
-          <h2 class="text-4xl font-bold text-white mb-6">About Us</h2>
+          <h2 class="text-4xl font-bold text-white mb-2">About Us</h2>
           <div class="w-24 h-1 bg-[#fe8310] mx-auto rounded-full"></div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
