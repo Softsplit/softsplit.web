@@ -32,7 +32,7 @@ interface Game {
       <div class="absolute inset-0 bg-gradient hero-gradient"></div>
       <canvas #particleCanvas class="absolute w-full h-full"></canvas>
       <div class="backdrop-blur-[1px] flex flex-col items-center justify-center w-full px-12 pt-[10rem] pb-20 relative">
-        <div class="absolute bottom-0 left-0 right-0 h-[50%] bg-gradient-to-t from-[#332416] via-[#33241680] to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 h-[50%] bg-gradient-to-t from-[#332416] to-transparent"></div>
         <div class="text-white w-full md:w-2/3 lg:w-1/2 flex flex-col items-center relative z-10">
           <h1 class="text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg text-center">
             <span class="text-white">We're</span>
@@ -45,7 +45,7 @@ interface Game {
       </div>
     </section>
     <section id="games" class="games-section flex bg-cover bg-center py-20 px-4 relative justify-center">
-      <div class="absolute h-[100%] inset-0 bg-gradient-to-b from-[#332416] via-[#33241680] to-transparent"></div>
+      <div class="absolute h-[100%] inset-0 bg-gradient-to-b from-[#332416] to-transparent"></div>
       <div class="container max-w-sm md:max-w-3xl relative z-10">
         <h2 class="text-4xl font-bold text-white mb-12 text-center md:text-left drop-shadow-lg">Our games :)</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -79,6 +79,29 @@ interface Game {
               <span class="text-white text-lg">{{stat.label}}</span>
             </div>
           }
+        </div>
+      </div>
+    </section>
+    <section id="about" class="about-section flex bg-cover bg-center py-20 relative justify-center">
+      <div class="absolute inset-0 bg-gradient-to-b from-[#1f1a16] to-[black]"></div>
+      <div class="container max-w-5xl relative z-10 px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-white mb-6">About Us</h2>
+          <div class="w-24 h-1 bg-[#fe8310] mx-auto rounded-full"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div class="text-white space-y-6">
+            <p class="text-lg leading-relaxed px-4">
+              We're a passionate team of developers and creators who love building unique gaming experiences. Working from all corners of the globe, we collaborate in our spare time to bring innovative ideas to life.
+            </p>
+            <p class="text-lg leading-relaxed px-4">
+              Our focus is on creating engaging, community-driven games that push creative boundaries while maintaining a fun and inclusive environment for players.
+            </p>
+          </div>
+          <div class="relative mx-4">
+            <div class="absolute inset-0 bg-gradient-to-r from-[#fe8310]/20 to-transparent rounded-lg"></div>
+            <img src="/about_img.png" alt="Team Collaboration" class="w-full h-auto rounded-lg shadow-xl py-8" loading="lazy">
+          </div>
         </div>
       </div>
     </section>
@@ -124,6 +147,25 @@ interface Game {
     .achievements-section {
       font-family: 'League Spartan';
       background: #1f1a16;
+    }
+
+    .about-section {
+      font-family: 'League Spartan';
+      background: #1f1a16;
+      
+      p {
+        color: rgba(255, 255, 255, 0.9);
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      
+      img {
+        transform: perspective(1000px) rotateY(-15deg);
+        transition: transform 0.5s ease;
+        
+        &:hover {
+          transform: perspective(1000px) rotateY(-5deg);
+        }
+      }
     }
   `]
 })
