@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { SocialButtonsComponent } from './social-buttons.component';
+import { SocialButtonsComponent } from './shared/social-buttons.component';
 
 @Component({
   selector: 'app-footer',
