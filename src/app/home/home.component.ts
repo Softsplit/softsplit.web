@@ -17,7 +17,7 @@ interface Game {
   description: string;
   imageUrl: string;
   link: string;
-  year: number;
+  year: string;
 }
 
 @Component({
@@ -155,7 +155,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       description: "Immerse yourself in the tantalizing thrill of staring at (or munching on) a spinning ASCII torus, as you ponder life's deepest questions.",
       imageUrl: "/games/sboxdonut.png",
       link: "https://sbox.game/softsplit/donut",
-      year: 2024
+      year: "February 2024"
     },
     {
       id: 2,
@@ -163,7 +163,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       description: "An open-source, community-developed port of the original Sandbox for the scene system.",
       imageUrl: "/games/sandboxclassic.png",
       link: "https://sbox.game/softsplit/sandbox",
-      year: 2024
+      year: "April 2024"
     }
   ];
 
@@ -171,7 +171,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     { value: '2+', label: 'Games Released' },
     { value: '400+', label: 'Discord Members' },
     { value: '50K+', label: 'Unique Players' },
-    { value: '0', label: 'Incidents' }
+    { value: '0', label: 'Legal Incidents' }
   ];
 
   constructor(@Inject(PLATFORM_ID) platformId: Object) {
