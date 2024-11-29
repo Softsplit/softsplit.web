@@ -118,7 +118,7 @@ interface Game {
 
     .games-section {
       font-family: 'League Spartan';
-      background-image: radial-gradient(circle, rgba(102,102,102,1) 0%, rgba(102,102,102,0.75) 0%, rgba(51,36,22,1) 100%), url('/games_bg.png');
+      background-image: radial-gradient(circle, rgba(102,102,102,1) 0%, rgba(102,102,102,0.75) 0%, rgba(51,36,22,1) 75%), url('/games_bg.png');
     }
     
     .game-card {
