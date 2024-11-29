@@ -8,7 +8,7 @@ import { SocialButtonsComponent } from './shared/social-buttons.component';
   imports: [RouterLink, SocialButtonsComponent],
   template: `
     <footer class="text-white text-lg min-h-[18rem] flex flex-wrap basis-full">
-      <div class="absolute w-full h-px fake-border"></div>
+      <div class="absolute w-full h-[2px] fake-border"></div>
       <div class="container mx-auto py-12 px-6 flex flex-col lg:flex-row justify-evenly gap-12 items-center">
         <div class="w-fit flex flex-col justify-center">
           <img src="footer_logo.png" alt="Logo" class="mb-4 w-32 h-auto object-cover">
