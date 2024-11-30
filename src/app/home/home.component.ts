@@ -1,5 +1,7 @@
 import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 import { GameCardComponent } from './game-card.component';
 import { StatisticCardComponent } from './statistic-card.component';
@@ -18,7 +20,7 @@ import { GridService } from './grid.service';
   ],
   template: `
     <section class="hero-section font-['League_Spartan'] flex bg-cover bg-center relative min-h-screen justify-center">
-      <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover -z-10">
+      <video #heroVideo autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
         <source src="hero_bg.mp4" type="video/mp4">
       </video>
       <div class="absolute inset-0 hero-gradient -z-5"></div>
@@ -92,11 +94,27 @@ import { GridService } from './grid.service';
 })
 export class HomeComponent implements AfterViewInit {
   @ViewChild('gridCanvas') gridCanvas!: ElementRef<HTMLCanvasElement>;
+  @ViewChild('heroVideo') heroVideo!: ElementRef<HTMLVideoElement>;
 
-  constructor(private gridService: GridService) {}
+  constructor(private gridService: GridService, private router: Router) {
+    // Reset video state on route changes
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      if (this.heroVideo?.nativeElement) {
+        const video = this.heroVideo.nativeElement;
+        video.muted = true;
+        video.currentTime = 0;
+      }
+    });
+  }
 
   ngAfterViewInit() {
     this.gridService.drawGrid(this.gridCanvas.nativeElement);
+
+    if (this.heroVideo?.nativeElement) {
+      this.heroVideo.nativeElement.muted = true;
+    }
   }
 
   readonly games = [
