@@ -46,13 +46,13 @@ import { isPlatformBrowser } from '@angular/common';
                       'opacity-100 translate-x-0': isMenuOpen()}">
         <div class="mobile-menu-bg relative h-[calc(100vh-5rem)] overflow-y-auto">
           <div class="flex flex-col items-center justify-center min-h-full py-4 backdrop-blur-xl">
-            <a routerLink="/#about" 
+            <a href="/#about" 
                (click)="toggleMenu()"
                class="text-4xl text-white hover:text-orange-500 transition-colors font-semibold px-4 py-3 w-full text-center inline-flex items-center justify-center gap-3">
                <span class="material-symbols-outlined text-[32px] translate-y-[-3px]">info</span>
                About Us
             </a>
-            <a routerLink="/#games"
+            <a href="/#games"
                (click)="toggleMenu()" 
                class="text-4xl text-white hover:text-orange-500 transition-colors font-semibold px-4 py-3 w-full text-center inline-flex items-center justify-center gap-3">
                <span class="material-symbols-outlined text-[32px] translate-y-[-3px]">sports_esports</span>
