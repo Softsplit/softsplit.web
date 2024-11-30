@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule, ViewportScroller } from '@angular/common';
 
 interface TeamMember {
     name: string;
@@ -119,7 +119,14 @@ interface TeamMember {
     </section>
     `
 })
-export class TeamComponent {
+export class TeamComponent implements OnInit {
+    constructor(private viewportScroller: ViewportScroller) {}
+
+    ngOnInit() {
+        // Scroll to top when the team component initializes
+        this.viewportScroller.scrollToPosition([0, 0]);
+    }
+
     readonly teamMembers: TeamMember[] = [
         {
             name: 'Asphaltian',
