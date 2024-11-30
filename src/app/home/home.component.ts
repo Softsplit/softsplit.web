@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { GameCardComponent } from './game-card.component';
 import { StatisticCardComponent } from './statistic-card.component';
 import { SocialButtonsComponent } from '../shared/social-buttons.component';
+
 import { GridService } from './grid.service';
 
 @Component({

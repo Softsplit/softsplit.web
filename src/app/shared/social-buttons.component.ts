@@ -41,35 +41,44 @@ interface SocialLink {
       margin-top: 2rem;
       
       .social-buttons-grid {
-        grid-template-columns: auto-fit;
-        grid-auto-flow: column;
+        display: flex;
+        flex-wrap: wrap;
         justify-content: center;
-        gap: 1rem;
-
-        @media (min-width: 768px) {
-          grid-template-columns: repeat(4, auto);
-        }
+        gap: 1.5rem;
       }
       
       a {
-        padding: 0.1rem; // Larger border for hero section buttons
-      }
-      
-      a div {
-        padding: 0.75rem;
-        
-        @media (min-width: 768px) {
-          padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 4rem;
+        height: 4rem;
+        padding: 0.2rem;
+        background: linear-gradient(180deg, rgba(102, 102, 102, 0.45) 0%, rgba(102, 102, 102, 0) 100%);
+
+        div {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(180deg, #151515 0%, #1C1C1C 100%);
+          padding: 0.75rem;
         }
-      }
-      
-      img {
-        width: 1.25rem;
-        height: 1.25rem;
-        
-        @media (min-width: 768px) {
-          width: 1.75rem;
-          height: 1.75rem;
+
+        img {
+          width: 2.25rem;
+          height: 2.25rem;
+
+          @media (min-width: 768px) {
+            width: 2.5rem;
+            height: 2.5rem;
+          }
+
+          @media (min-width: 1024px) {
+            width: 2.75rem;
+            height: 2.75rem;
+          }
         }
       }
     }
