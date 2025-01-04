@@ -12,7 +12,7 @@ import { SocialButtonsComponent } from './shared/social-buttons.component';
       <div class="container mx-auto py-12 px-6 flex flex-col lg:flex-row justify-evenly gap-12 items-center">
         <div class="w-fit flex flex-col justify-center">
           <img src="footer_logo.png" alt="Logo" class="mb-4 w-32 h-auto object-cover">
-          <p class="opacity-25 text-center">&copy; 2024 Softsplit</p>
+          <p class="opacity-25 text-center">&copy; 2025 Softsplit</p>
         </div>
         <div class="w-full md:w-1/2 flex flex-col lg:flex-row justify-between gap-8 order-1 md:order-none">
           <div class="flex flex-col items-center gap-2">
