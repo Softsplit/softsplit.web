@@ -130,7 +130,7 @@ export class TeamComponent implements OnInit {
     readonly teamMembers: TeamMember[] = [
         {
             name: 'Asphaltian',
-            role: 'CEO & Founder',
+            role: 'Founder',
             avatarUrl: '/team/asphaltian.jpg',
             bio: 'He went out for milk and didn\'t come back for 10 years.',
             links: {
@@ -147,6 +147,15 @@ export class TeamComponent implements OnInit {
             links: {
                 github: 'https://github.com/SwagAccount',
                 youtube: 'https://www.youtube.com/@thehumbleonion5280'
+            }
+        },
+        {
+            name: 'trende',
+            role: 'Programmer',
+            avatarUrl: '/team/trende.jpg',
+            bio: 'bro-grammer',
+            links: {
+                github: 'https://github.com/trende2001'
             }
         },
         {
